@@ -5,3 +5,7 @@ This repo is an example of how you can build and publish a website with [[https:
 Check out the [[https://systemcrafters.net/publishing-websites-with-org-mode/][Publishing Websites with Org Mode]] series to learn how this was created!
  
 I hope it works. Shit it does ha!
+
+Comon! work!
+
+* Hi world!
