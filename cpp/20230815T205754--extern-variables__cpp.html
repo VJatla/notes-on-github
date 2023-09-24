@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>extern variables</title>
+<meta name="generator" content="Org mode" />
+<link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css" />
+</head>
+<body>
+<div id="content">
+<h1 class="title">extern variables</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org6435535">Global variables with external linkage</a>
+<ul>
+<li><a href="#org4d646f3">1. Announcing global variable</a></li>
+<li><a href="#org286a999">2. Defining the variable</a></li>
+<li><a href="#org641ba51">3. Using in another file :</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org6435535" class="outline-2">
+<h2 id="org6435535">Global variables with external linkage</h2>
+<div class="outline-text-2" id="text-org6435535">
+<p>
+These variables are also called external (in short extern) variables.
+They are <b>not recommended</b> to use except for the cases when they are
+absolutely necessary or when doing experiments. The production code
+should not have these varaibles unless there is no other way of
+implementing a concept or idea. The following steps show a basic idea
+on how to use these variables.
+</p>
+</div>
+
+<div id="outline-container-org4d646f3" class="outline-3">
+<h3 id="org4d646f3">1. Announcing global variable</h3>
+<div class="outline-text-3" id="text-org4d646f3">
+<p>
+We use <code>extern</code> keyword to declare
+a variable as external variable. When we do this no memory is
+allocated, only property of the variable is declared.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-cpp"><span style="font-weight: bold; font-style: italic;">/* </span><span style="font-weight: bold; font-style: italic;">File name = header.h</span><span style="font-weight: bold; font-style: italic;"> */</span>
+<span style="font-weight: bold;">#include</span><span style="font-style: italic;">&lt;iostream&gt;</span>
+
+<span style="font-weight: bold; font-style: italic;">// </span><span style="font-weight: bold; font-style: italic;">Declaring extern variable no memory is allocated to the variable yet.</span>
+<span style="font-weight: bold;">extern</span> <span style="font-weight: bold; text-decoration: underline;">int</span> <span style="font-weight: bold; font-style: italic;">e</span>;  
+
+<span style="font-weight: bold; text-decoration: underline;">void</span> <span style="font-weight: bold;">change_extern_variable</span>();
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org286a999" class="outline-3">
+<h3 id="org286a999">2. Defining the variable</h3>
+<div class="outline-text-3" id="text-org286a999">
+<p>
+<b>WARNING</b>: We cannot define extern variable more than once.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-cpp"><span style="font-weight: bold; font-style: italic;">/* </span><span style="font-weight: bold; font-style: italic;">File name = main.cpp</span><span style="font-weight: bold; font-style: italic;"> */</span>
+<span style="font-weight: bold;">#include</span> <span style="font-style: italic;">"header.h"</span>
+
+<span style="font-weight: bold; font-style: italic;">// </span><span style="font-weight: bold; font-style: italic;">Defining external variable. It needs to be initalized only once</span>
+<span style="font-weight: bold; text-decoration: underline;">int</span> <span style="font-weight: bold; font-style: italic;">e</span> = 0;  
+
+<span style="font-weight: bold; text-decoration: underline;">int</span> <span style="font-weight: bold;">main</span>()
+{
+        <span style="font-weight: bold; font-style: italic;">// </span><span style="font-weight: bold; font-style: italic;">Printing external variable</span>
+        <span style="font-weight: bold; text-decoration: underline;">std</span>::cout &lt;&lt; <span style="font-style: italic;">"Extern variable values is "</span> &lt;&lt; e &lt;&lt; <span style="font-weight: bold; text-decoration: underline;">std</span>::endl;;
+
+        <span style="font-weight: bold; font-style: italic;">// </span><span style="font-weight: bold; font-style: italic;">Changing value of external variable to 10 in the same file.</span>
+        e = 10;
+        <span style="font-weight: bold; text-decoration: underline;">std</span>::cout &lt;&lt; <span style="font-style: italic;">"Extern variable values is "</span> &lt;&lt; e &lt;&lt; <span style="font-weight: bold; text-decoration: underline;">std</span>::endl;
+
+        <span style="font-weight: bold; font-style: italic;">// </span><span style="font-weight: bold; font-style: italic;">Changing extern variable value in a function in another file</span>
+        change_extern_variable();
+        <span style="font-weight: bold; text-decoration: underline;">std</span>::cout &lt;&lt; <span style="font-style: italic;">"Extern variable values is "</span> &lt;&lt; e &lt;&lt; <span style="font-weight: bold; text-decoration: underline;">std</span>::endl;
+}
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org641ba51" class="outline-3">
+<h3 id="org641ba51">3. Using in another file :</h3>
+<div class="outline-text-3" id="text-org641ba51">
+<p>
+To use it in another file we have to tell the file the name of extern
+variable.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-cpp"><span style="font-weight: bold; font-style: italic;">/* </span><span style="font-weight: bold; font-style: italic;">File name = change_extern_variable.cpp</span><span style="font-weight: bold; font-style: italic;"> */</span>
+<span style="font-weight: bold;">#include</span> <span style="font-style: italic;">"header.h"</span>
+
+<span style="font-weight: bold; text-decoration: underline;">void</span> <span style="font-weight: bold;">change_extern_variable</span>()
+{
+        <span style="font-weight: bold; font-style: italic;">// </span><span style="font-weight: bold; font-style: italic;">Changing value of external variable</span>
+        e = 30;
+}
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Date: 2023-08-15 Tue 20:57</p>
+<p class="creator"><a href="https://www.gnu.org/software/emacs/">Emacs</a> 27.1 (<a href="https://orgmode.org">Org</a> mode 9.3)</p>
+</div>
+</body>
+</html>

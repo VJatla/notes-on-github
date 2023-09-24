@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>cin and cout</title>
+<meta name="generator" content="Org mode" />
+<link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css" />
+</head>
+<body>
+<div id="content">
+<h1 class="title">cin and cout</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#orgaa4809f">cout: Character output stream</a>
+<ul>
+<li><a href="#org0ebec5c">To display on standard output (Screen)</a></li>
+</ul>
+</li>
+<li><a href="#org00b9730">cin: Character input stream</a>
+<ul>
+<li><a href="#orgb2eefe5">To take data from standard input (Keyboard)</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgaa4809f" class="outline-2">
+<h2 id="orgaa4809f">cout: Character output stream</h2>
+<div class="outline-text-2" id="text-orgaa4809f">
+<p>
+<b>Standard output:</b> Standard output is a stream to which a program
+writes its output data. In the case of an interactive shell, it is
+usually the text terminal which initiated the program.
+</p>
+</div>
+
+<div id="outline-container-org0ebec5c" class="outline-3">
+<h3 id="org0ebec5c">To display on standard output (Screen)</h3>
+<div class="outline-text-3" id="text-org0ebec5c">
+<div class="org-src-container">
+<pre class="src src-C++"><span style="font-weight: bold;">#include</span><span style="font-style: italic;">&lt;iostream&gt;</span>
+<span style="font-weight: bold; text-decoration: underline;">int</span> <span style="font-weight: bold;">main</span>()
+{
+<span style="font-weight: bold; text-decoration: underline;">std</span>::cout &lt;&lt; <span style="font-style: italic;">"hello world"</span> &lt;&lt; <span style="font-weight: bold; text-decoration: underline;">std</span>::endl;
+}
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org00b9730" class="outline-2">
+<h2 id="org00b9730">cin: Character input stream</h2>
+<div class="outline-text-2" id="text-org00b9730">
+<p>
+<b>Standard input</b>: Standard input is a stream from which a program
+reads its input data. In the case of an interactive shell, that is
+usually associated with the keyboard.
+</p>
+</div>
+
+<div id="outline-container-orgb2eefe5" class="outline-3">
+<h3 id="orgb2eefe5">To take data from standard input (Keyboard)</h3>
+<div class="outline-text-3" id="text-orgb2eefe5">
+<div class="org-src-container">
+<pre class="src src-C++"><span style="font-weight: bold;">#include</span><span style="font-style: italic;">&lt;iostream&gt;</span>
+<span style="font-weight: bold; text-decoration: underline;">int</span> <span style="font-weight: bold;">main</span>()
+{
+<span style="font-weight: bold; text-decoration: underline;">std</span>::<span style="font-weight: bold; text-decoration: underline;">string</span> <span style="font-weight: bold; font-style: italic;">name</span>;
+<span style="font-weight: bold; text-decoration: underline;">std</span>::cout &lt;&lt; <span style="font-style: italic;">"What is your name?"</span> &lt;&lt; <span style="font-weight: bold; text-decoration: underline;">std</span>::endl;
+<span style="font-weight: bold; text-decoration: underline;">std</span>::cin &gt;&gt; name;
+<span style="font-weight: bold; text-decoration: underline;">std</span>::cout &lt;&lt; <span style="font-style: italic;">"Your name is "</span> &lt;&lt; name &lt;&lt; <span style="font-weight: bold; text-decoration: underline;">std</span>::endl;
+}
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Date: 2023-08-15 Tue 22:20</p>
+<p class="creator"><a href="https://www.gnu.org/software/emacs/">Emacs</a> 27.1 (<a href="https://orgmode.org">Org</a> mode 9.3)</p>
+</div>
+</body>
+</html>
