@@ -3,6 +3,7 @@
 #+filetags:   
 #+identifier: 20230923T192716
 #+export_file_name: index
+#+SETUPFILE: https://fniessen.github.io/org-html-themes/org/theme-NAME.setup
 
 #+title: Knowledge garden
 
