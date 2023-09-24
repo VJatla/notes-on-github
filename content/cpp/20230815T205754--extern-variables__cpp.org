@@ -1,0 +1,68 @@
+#+title:      extern variables
+#+date:       [2023-08-15 Tue 20:57]
+#+filetags:   :cpp:
+#+identifier: 20230815T205754
+
+* Global variables with external linkage
+
+These variables are also called external (in short extern) variables.
+They are *not recommended* to use except for the cases when they are
+absolutely necessary or when doing experiments. The production code
+should not have these varaibles unless there is no other way of
+implementing a concept or idea. The following steps show a basic idea
+on how to use these variables.
+
+** 1. Announcing global variable
+We use =extern= keyword to declare
+a variable as external variable. When we do this no memory is
+allocated, only property of the variable is declared.
+
+#+begin_src cpp
+/* File name = header.h */
+#include<iostream>
+
+// Declaring extern variable no memory is allocated to the variable yet.
+extern int e;  
+
+void change_extern_variable();
+#+end_src
+
+** 2. Defining the variable
+*WARNING*: We cannot define extern variable more than once.
+
+#+begin_src cpp
+/* File name = main.cpp */
+#include "header.h"
+
+// Defining external variable. It needs to be initalized only once
+int e = 0;  
+
+int main()
+{
+	// Printing external variable
+	std::cout << "Extern variable values is " << e << std::endl;;
+
+	// Changing value of external variable to 10 in the same file.
+	e = 10;
+	std::cout << "Extern variable values is " << e << std::endl;
+
+	// Changing extern variable value in a function in another file
+	change_extern_variable();
+	std::cout << "Extern variable values is " << e << std::endl;
+}
+#+end_src
+
+** 3. Using in another file :
+To use it in another file we have to tell the file the name of extern
+variable.
+
+#+begin_src cpp
+/* File name = change_extern_variable.cpp */
+#include "header.h"
+
+void change_extern_variable()
+{
+	// Changing value of external variable
+	e = 30;
+}
+#+end_src

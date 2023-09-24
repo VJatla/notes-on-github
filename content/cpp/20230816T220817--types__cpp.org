@@ -1,0 +1,31 @@
+#+title:      Types
+#+date:       [2023-08-16 Wed 22:08]
+#+filetags:   :cpp:
+#+identifier: 20230816T220817
+
+* Introduction
+The places in which we store data are called /objects/. To access an
+object we need a /name/. A named object is called a /variable/ and
+has a specific *type* (such as ~int~ and ~string~).
+
+The *type* determines what can be put into the object and which
+operations can be applied. Each of the type have their own
+characteristic style of  [[file:20230816T224346--literals__cpp.org][literals]].
+
+For example, 
+- ~123~ is an integer. We can perform multiplicaiton using =*= operator
+  on integers.
+- ~"Hello, World!\n"~ is a string and we can use ~<=~ to compare them.
+
+* Important Types
+
+| Type name   | Example          | Comments / Description                |
+|-------------+------------------+---------------------------------------|
+| int         | 123, 2, -1, -4   |                                       |
+| char        | '2', 'o', 'e'    |                                       |
+| std::string | "Hello world"    |                                       |
+| double      | 3.5, 2.0, 3.1415 | Double bit floating point precision.  |
+|             |                  | Represents real numbers in computers. |
+| bool        | true, false      |                                       |
+
+

@@ -1,0 +1,12 @@
+#+title:      definitions
+#+date:       [2023-08-15 Tue 21:51]
+#+filetags:   :cpp:
+#+identifier: 20230815T215117
+
+| Word     | Definition                                              |
+|----------+---------------------------------------------------------|
+| Object   | An object is a region of memory with a type that        |
+|          | specifies what kind of information can be placed in it. |
+|          |                                                         |
+| Variable | A named object is called a variable.                    |
+|          |                                                         |

@@ -1,0 +1,37 @@
+#+title:      cin and cout
+#+date:       [2023-08-15 Tue 22:20]
+#+filetags:   :cpp:
+#+identifier: 20230815T222022
+
+* cout: Character output stream
+*Standard output:* Standard output is a stream to which a program
+writes its output data. In the case of an interactive shell, it is
+usually the text terminal which initiated the program.
+
+** To display on standard output (Screen)
+
+#+begin_src C++
+#include<iostream>
+int main()
+{
+std::cout << "hello world" << std::endl;
+}
+#+end_src
+
+* cin: Character input stream
+*Standard input*: Standard input is a stream from which a program
+reads its input data. In the case of an interactive shell, that is
+usually associated with the keyboard.
+
+** To take data from standard input (Keyboard)
+
+#+begin_src C++
+#include<iostream>
+int main()
+{
+std::string name;
+std::cout << "What is your name?" << std::endl;
+std::cin >> name;
+std::cout << "Your name is " << name << std::endl;
+}
+#+end_src

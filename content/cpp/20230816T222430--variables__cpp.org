@@ -1,0 +1,17 @@
+#+title:      variables
+#+date:       [2023-08-16 Wed 22:24]
+#+filetags:   :cpp:
+#+identifier: 20230816T222430
+
+A variable is a named object. An object is a region in memory that
+stores some data.
+
+*Defining variable:* The statement that denines a variable is called
+a /definition/. A definition can also provide an initial value. For
+example,
+
+#+begin_src C++ :includes <iostream>
+std::string name = "Venkatesh Jatla";
+int my_num = 369;
+std::cout << my_num;
+#+end_src

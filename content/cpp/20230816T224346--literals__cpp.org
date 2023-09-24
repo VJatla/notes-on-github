@@ -1,0 +1,24 @@
+#+title:      literals
+#+date:       [2023-08-16 Wed 22:43]
+#+filetags:   :cpp:
+#+identifier: 20230816T224346
+
+Literals are data used for representing *fixed values*. They can be
+used directly in the code. For example: 1, 2.5, 'c' etc. Here, 1, 2.5
+and 'c' are literals. 
+
+Why? You cannot assign different values to these terms.
+
+| Literal name         | Type of literal | Example                         |
+|----------------------+-----------------+---------------------------------|
+| decimal              | integer         | 0, 1, 2, -9, 22                 |
+| octal                | integer         | 022, 033, 077                   |
+| hexadecimal          | integer         | 0x7f, 0x2a, 0x521               |
+| Floating point       | floating point  | -2.0, 0.0023, -0.22E-5          |
+| Characters           | character       | 'a', 'm', 'F', '{'              |
+| Escape Sequences     |                 | \t, \v, \\, \r, \n              |
+| String               |                 | "Good", "", "Earth is round \n" |
+| Binary (from C++ 14) |                 | 0b110011                        |
+
+* Interger literals
+
